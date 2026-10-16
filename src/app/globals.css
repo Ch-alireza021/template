@@ -1,36 +1,36 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where([class~="dark"], [class~="dark"] *));
 
 :root {
-    color-scheme: light
+  color-scheme: light;
 }
 
 html.dark {
-    color-scheme: dark
+  color-scheme: dark;
 }
 
 * {
-    box-sizing: border-box
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, Tahoma, sans-serif
+  margin: 0;
+  font-family: Arial, Tahoma, sans-serif;
 }
 
 .container-page {
-    width: min(1120px, calc(100% - 2rem));
-    margin-inline: auto
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
 }
 
 .surface {
-    background: rgb(255 255 255 / .88);
-    border: 1px solid rgb(148 163 184 / .25);
-    backdrop-filter: blur(12px)
+  background: rgb(255 255 255 / 0.88);
+  border: 1px solid rgb(148 163 184 / 0.25);
+  backdrop-filter: blur(12px);
 }
 
 .dark .surface {
-    background: rgb(15 23 42 / .82);
-    border-color: rgb(148 163 184 / .18)
+  background: rgb(15 23 42 / 0.82);
+  border-color: rgb(148 163 184 / 0.18);
 }

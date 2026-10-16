@@ -1,10 +1,36 @@
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { hasLocale } from "next-intl";
-import { routing } from "@/i18n/routing";
-export function generateStaticParams() { return routing.locales.map(locale => ({ locale })); }
-export default async function LocaleLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
-    const { locale } = await params; if (!hasLocale(routing.locales, locale)) notFound(); setRequestLocale(locale); const messages = await getMessages();
-    return <html lang={locale} dir={locale === "fa" ? "rtl" : "ltr"} suppressHydrationWarning><body className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100"><NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider></body></html>;
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { NextIntlClientProvider } from "next-intl";
+import { routing, type Locale } from "@/i18n/routing";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  if (!routing.locales.includes(locale as Locale)) {
+    notFound();
+  }
+
+  // فعال‌سازی رندر استاتیک برای این لوکال
+  setRequestLocale(locale);
+
+  const messages = await getMessages();
+  const dir = locale === "fa" ? "rtl" : "ltr";
+
+  return (
+    <div lang={locale} dir={dir} className="flex min-h-screen flex-col">
+      <NextIntlClientProvider messages={messages}>
+        {children}
+      </NextIntlClientProvider>
+    </div>
+  );
 }

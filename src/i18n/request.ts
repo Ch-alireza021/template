@@ -1,18 +1,23 @@
-import * as rootParams from 'next/root-params';
-import {getRequestConfig} from 'next-intl/server';
-import {hasLocale} from 'next-intl';
-import {routing} from './routing';
-import {notFound} from 'next/navigation';
+import { getRequestConfig } from "next-intl/server";
+import { routing, type Locale } from "./routing";
 
-export default getRequestConfig(async () => {
-  const paramValue = await rootParams.locale();
+const messageLoaders: Record<Locale, () => Promise<{ default: any }>> = {
+  fa: () => import("../app/messages/fa.json"),
+  en: () => import("../app/messages/en.json"),
+};
 
-  if (!hasLocale(routing.locales, paramValue)) {
-    notFound();
-  }
+export default getRequestConfig(async ({ requestLocale }) => {
+  const requested = await requestLocale;
+  const currentLocale: Locale =
+    requested && routing.locales.includes(requested as Locale)
+      ? (requested as Locale)
+      : routing.defaultLocale;
+
+  const loadMessages = messageLoaders[currentLocale] ?? messageLoaders.fa;
+  const messages = (await loadMessages()).default;
 
   return {
-    locale: paramValue,
-    messages: (await import(`../messages/${paramValue}.json`)).default
+    locale: currentLocale,
+    messages,
   };
 });
