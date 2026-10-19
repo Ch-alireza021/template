@@ -1,0 +1,51 @@
+{
+  "common": {
+    "brand": "Student Sports Portal",
+    "navHome": "Home",
+    "navEvents": "Events",
+    "navResources": "Resources",
+    "login": "Admin login",
+    "logout": "Log out",
+    "theme": "Change theme",
+    "footer": "A generic starter for a student sports portal.",
+    "notFound": "Page not found"
+  },
+  "landing": {
+    "eyebrow": "Move, learn, belong",
+    "competitions": "view competitions",
+    "title": "Sport is an opportunity for every student to grow",
+    "description": "A starter space for student-sports news, events and resources across schools and provinces.",
+    "explore": "Explore the portal",
+    "sectionTitle": "Along for every sporting step",
+    "sectionIntro": "Bring essential information and tools together for students, coaches, physical education teachers, and organizers.",
+    "newsTitle": "Latest school sports news",
+    "newsText": "Stay informed about school sports, competitions, talent scouting, and official updates.",
+    "eventsTitle": "Competitions and festivals",
+    "eventsText": "Schedules, brackets, venues, and live updates across provinces.",
+    "resourcesTitle": "Rules, guidelines, and materials",
+    "resourcesText": "Access official regulations, educational content, and student sports documentation."
+  },
+  "login": {
+    "title": "Admin login",
+    "hint": "Enter the demo credentials to view the dashboard.",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Sign in",
+    "error": "The username or password is incorrect."
+  },
+  "dashboard": {
+    "title": "Admin dashboard",
+    "welcome": "Welcome",
+    "overview": "Overview",
+    "manageContent": "Content",
+    "manageEvents": "Events",
+    "reports": "Reports",
+    "students": "Students",
+    "activeEvents": "Active events",
+    "publishedItems": "Published items",
+    "participation": "Sample participation",
+    "recentActivity": "Sample dashboard view",
+    "recentText": "This is a sample view; no live data is connected.",
+    "protected": "This page is available to signed-in users only."
+  }
+}
