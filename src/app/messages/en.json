@@ -1,21 +1,37 @@
 {
   "common": {
-    "brand": "Student Sports Portal",
     "navHome": "Home",
     "navEvents": "Events",
     "navResources": "Resources",
-    "login": "Admin login",
     "logout": "Log out",
-    "theme": "Change theme",
     "footer": "A generic starter for a student sports portal.",
-    "notFound": "Page not found"
+    "notFound": "Page not found",
+    "brand": "Student Sports Federation",
+    "subBrand": "I.R. Iran",
+    "login": "Login / Portal",
+    "theme": "Toggle Theme",
+    "language": "Change Language",
+    "menu": "Menu",
+    "close": "Close",
+    "nav": {
+      "home": "Home",
+      "about": "About Us",
+      "news": "News",
+      "competitions": "Competitions",
+      "education": "Education & Research",
+      "gallery": "Gallery",
+      "contact": "Contact"
+    }
   },
   "landing": {
-    "eyebrow": "Move, learn, belong",
-    "competitions": "view competitions",
-    "title": "Sport is an opportunity for every student to grow",
-    "description": "A starter space for student-sports news, events and resources across schools and provinces.",
-    "explore": "Explore the portal",
+    "eyebrow": "National School Sports Portal",
+    "title": "Sports, Health, Bright Future",
+    "description": "Together for a healthy, active, and promising generation",
+    "competitions": "View Matches & Events",
+    "explore": "Electronic Services",
+    "liveMatches": "Live School Match Scores",
+    "aiCopilot": "AI Sports Copilot",
+    "directives": "Directives & Circulars Archive",
     "sectionTitle": "Along for every sporting step",
     "sectionIntro": "Bring essential information and tools together for students, coaches, physical education teachers, and organizers.",
     "newsTitle": "Latest school sports news",
@@ -49,3 +65,4 @@
     "protected": "This page is available to signed-in users only."
   }
 }
+ 
